@@ -1,0 +1,48 @@
+2023-03-20 20:44:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "USUARIOS" ya existe
+Table "USUARIOS" already exists; SQL statement:
+CREATE TABLE `usuarios` (`cedula` VARCHAR(255) , `nombre` VARCHAR(255) , `edad` INTEGER , `experiencia` INTEGER , `profesion` VARCHAR(255) , `telefono` INTEGER , PRIMARY KEY (`cedula`) ) [42101-214]
+2023-03-23 20:51:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "NA" no encontrada
+Column "NA" not found; SQL statement:
+SELECT * FROM `usuarios` WHERE `experiencia` BETWEEN na AND junior ORDER BY `experiencia` DESC [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.BetweenPredicate.optimize(BetweenPredicate.java:71)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:148)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1177)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:575)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:92)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:639)
+	at com.j256.ormlite.jdbc.JdbcDatabaseConnection.compileStatement(JdbcDatabaseConnection.java:143)
+	at com.j256.ormlite.stmt.mapped.MappedPreparedStmt.compile(MappedPreparedStmt.java:57)
+	at com.j256.ormlite.stmt.StatementExecutor.buildIterator(StatementExecutor.java:252)
+	at com.j256.ormlite.stmt.StatementExecutor.query(StatementExecutor.java:202)
+	at com.j256.ormlite.dao.BaseDaoImpl.query(BaseDaoImpl.java:286)
+	at com.j256.ormlite.stmt.QueryBuilder.query(QueryBuilder.java:384)
+	at Bolsaempleos.Bolsa.main(Bolsa.java:597)
+2023-03-26 11:35:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1375)
+	at org.h2.jdbc.JdbcStatement.checkClosed(JdbcStatement.java:1273)
+	at org.h2.jdbc.JdbcResultSet.checkClosed(JdbcResultSet.java:3539)
+	at org.h2.jdbc.JdbcResultSet.next(JdbcResultSet.java:124)
+	at com.j256.ormlite.jdbc.JdbcDatabaseResults.next(JdbcDatabaseResults.java:71)
+	at com.j256.ormlite.stmt.SelectIterator.hasNextThrow(SelectIterator.java:78)
+	at com.j256.ormlite.stmt.SelectIterator.hasNext(SelectIterator.java:96)
+	at Bolsaempleos.Bolsa.main(Bolsa.java:97)

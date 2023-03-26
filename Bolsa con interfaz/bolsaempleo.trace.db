@@ -1,0 +1,4 @@
+2023-03-20 20:48:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "USUARIOS" ya existe
+Table "USUARIOS" already exists; SQL statement:
+CREATE TABLE `usuarios` (`cedula` VARCHAR(255) , `nombre` VARCHAR(255) , `edad` INTEGER , `experiencia` INTEGER , `profesion` VARCHAR(255) , `telefono` INTEGER , PRIMARY KEY (`cedula`) ) [42101-214]
