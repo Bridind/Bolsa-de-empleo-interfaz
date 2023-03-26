@@ -1,0 +1,12 @@
+2023-03-20 20:44:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "USUARIOS" ya existe
+Table "USUARIOS" already exists; SQL statement:
+CREATE TABLE `usuarios` (`cedula` VARCHAR(255) , `nombre` VARCHAR(255) , `edad` INTEGER , `experiencia` INTEGER , `profesion` VARCHAR(255) , `telefono` INTEGER , PRIMARY KEY (`cedula`) ) [42101-214]
+2023-03-23 23:01:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT * FROM `usuarios` WHERE `edad` <>  [*]ORDER BY `edad`"; se esperaba "ALL (, ANY (, SOME ("
+Syntax error in SQL statement "SELECT * FROM `usuarios` WHERE `edad` <>  [*]ORDER BY `edad`"; expected "ALL (, ANY (, SOME ("; SQL statement:
+SELECT * FROM `usuarios` WHERE `edad` <>  ORDER BY `edad` [42001-214]
+2023-03-23 23:31:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT * FROM `usuarios` WHERE `edad` =  [*]ORDER BY `edad`"; se esperaba "ALL (, ANY (, SOME ("
+Syntax error in SQL statement "SELECT * FROM `usuarios` WHERE `edad` =  [*]ORDER BY `edad`"; expected "ALL (, ANY (, SOME ("; SQL statement:
+SELECT * FROM `usuarios` WHERE `edad` =  ORDER BY `edad` [42001-214]
